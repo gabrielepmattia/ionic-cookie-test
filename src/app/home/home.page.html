@@ -1,14 +1,26 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Ionic Blank
+      Cookie Test
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
-  </div>
+  <ion-button [disabled]="loading" (click)="downloadCookie()" expand="full" fill="outline">Download Cookie</ion-button>
+  <ion-button [disabled]="loading" (click)="printCookie()" expand="full" fill="outline">Print Cookie</ion-button>
+  <ion-button [disabled]="loading" (click)="clearCookies()" expand="full" fill="outline">Clear Cookies</ion-button>
+  <ion-button [disabled]="loading" (click)="printCookie()" expand="full" fill="outline">Print Cookie</ion-button>
+  <ion-button [disabled]="loading" (click)="checkCookie()" expand="full">Check Cookie</ion-button>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Results</ion-card-subtitle>
+      <ion-card-title>{{ resultTitle }}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      {{ result }}
+    </ion-card-content>
+  </ion-card>
 </ion-content>
